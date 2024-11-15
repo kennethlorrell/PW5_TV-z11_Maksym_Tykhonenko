@@ -8,6 +8,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.deepdark.lab5.components.TopAppBar
+import com.deepdark.lab5.pages.ReliabilityComparisonPage
 import com.deepdark.lab5.ui.theme.Lab5Theme
 
 class MainActivity : ComponentActivity() {
@@ -16,8 +21,19 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Lab5Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                val navController = rememberNavController()
 
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    topBar = { TopAppBar(navController) }
+                ) { innerPadding ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = "CableCalculator",
+                        Modifier.padding(innerPadding)
+                    ) {
+                        composable("CableCalculator") { ReliabilityComparisonPage() }
+                    }
                 }
             }
         }
