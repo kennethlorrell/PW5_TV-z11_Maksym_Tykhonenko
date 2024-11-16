@@ -1,4 +1,4 @@
-package com.deepdark.lab4.utils
+package com.deepdark.lab5.utils
 
 import kotlin.math.pow
 import kotlin.math.round

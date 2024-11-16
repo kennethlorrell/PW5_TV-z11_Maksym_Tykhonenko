@@ -57,7 +57,7 @@ fun ElectricitySystemSelect(
             allItems.forEach { item ->
                 DropdownMenuItem(
                     onClick = {
-                        selectedText = "Додати елемент"
+                        selectedText = item.name
                         onItemSelected(item)
                         expanded = false
                     },

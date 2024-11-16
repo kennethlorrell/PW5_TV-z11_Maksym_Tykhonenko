@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.deepdark.lab5.components.TopAppBar
+import com.deepdark.lab5.pages.InterruptionLossCalculatorPage
 import com.deepdark.lab5.pages.ReliabilityComparisonPage
 import com.deepdark.lab5.ui.theme.Lab5Theme
 
@@ -29,10 +30,11 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     NavHost(
                         navController = navController,
-                        startDestination = "CableCalculator",
+                        startDestination = "ReliabilityComparison",
                         Modifier.padding(innerPadding)
                     ) {
-                        composable("CableCalculator") { ReliabilityComparisonPage() }
+                        composable("ReliabilityComparison") { ReliabilityComparisonPage() }
+                        composable("InterruptionLossCalculator") { InterruptionLossCalculatorPage() }
                     }
                 }
             }

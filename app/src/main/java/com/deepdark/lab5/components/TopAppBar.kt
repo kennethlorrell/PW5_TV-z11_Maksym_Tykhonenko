@@ -13,10 +13,10 @@ fun TopAppBar(navController: NavController) {
     CenterAlignedTopAppBar(
         title = { Text("") },
         actions = {
-            TextButton(onClick = { navController.navigate("ComparisonReliabilityPage") }) {
+            TextButton(onClick = { navController.navigate("ReliabilityComparison") }) {
                 Text("Завдання 1")
             }
-            TextButton(onClick = { navController.navigate("ShortCircuitCurrentCalculator") }) {
+            TextButton(onClick = { navController.navigate("InterruptionLossCalculator") }) {
                 Text("Завдання 2")
             }
         }
